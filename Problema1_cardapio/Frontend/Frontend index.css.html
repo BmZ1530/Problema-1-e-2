@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio da Lanchonete</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Cardápio da Lanchonete do Bairro</h1>
+    </header>
+
+    <main>
+        <!-- Seção de Busca e Filtro -->
+        <section class="filtros">
+            <input type="text" id="busca" placeholder="Buscar por nome do item..." aria-label="Buscar item">
+            <select id="filtro-categoria" aria-label="Filtrar por categoria">
+                <option value="">Todas as categorias</option>
+                <option value="lanches">Lanches</option>
+                <option value="bebidas">Bebidas</option>
+                <option value="doces">Doces</option>
+            </select>
+            <button id="limpar-filtros">Limpar</button>
+        </section>
+
+        <!-- Seção do Cardápio -->
+        <section id="cardapio" class="cardapio">
+            <!-- Os itens serão inseridos aqui via JS -->
+        </section>
+
+        <!-- Seção do Carrinho -->
+        <section id="carrinho" class="carrinho" style="display: none;">
+            <h2>Carrinho de Compras</h2>
+            <ul id="itens-carrinho"></ul>
+            <div id="total">Total: R$ 0,00</div>
+            <button id="enviar-pedido">Enviar Pedido</button>
+            <div id="mensagem" class="mensagem"></div>
+        </section>
+
+        <!-- Formulário de Envio de Pedido -->
+        <section id="formulario-pedido" class="formulario" style="display: none;">
+            <h2>Finalizar Pedido</h2>
+            <form id="form-pedido">
+                <label for="nome-cliente">Nome do Cliente:</label>
+                <input type="text" id="nome-cliente" required aria-label="Nome do cliente">
+                
+                <label for="observacoes">Observações:</label>
+                <textarea id="observacoes" rows="3" placeholder="Ex: Sem cebola, por favor." aria-label="Observações"></textarea>
+                
+                <button type="submit">Confirmar Pedido</button>
+            </form>
+            <div id="mensagem-sucesso" class="mensagem"></div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
